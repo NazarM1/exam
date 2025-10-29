@@ -9,7 +9,7 @@ from exam.choices.choices import DutyStatus
 
 
 class Invigilator(SoftDeleteModel):
-    fk_branch = models.ForeignKey('Organization', on_delete=models.PROTECT, verbose_name=_('الفرع'), null=True, blank=True)
+    fk_branch = models.ForeignKey('system_management.Organization', on_delete=models.PROTECT, verbose_name=_('الفرع'), null=True, blank=True)
     fk_user = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='invigilator_profile', verbose_name=_('المستخدم'))
     employee_id = models.PositiveIntegerField(verbose_name=_('رقم الموظف'), null=True, blank=True)
     phone_number = models.CharField(max_length=15, verbose_name=_('رقم الهاتف'))

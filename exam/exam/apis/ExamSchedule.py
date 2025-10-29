@@ -1,6 +1,5 @@
 from rest_framework import viewsets
-from exam.models import ExamSchedule
-from exam.serializers.ExamSchedule import ExamScheduleSerializer
+from exam.serializers.ExamSchedule import ExamScheduleSerializer,ExamSchedule
 
 class ExamScheduleViewSet(viewsets.ModelViewSet):
     queryset = ExamSchedule.objects.prefetch_related()

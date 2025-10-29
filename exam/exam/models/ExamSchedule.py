@@ -8,8 +8,8 @@ from .base import SoftDeleteModel
 from exam.choices.choices import ExamType, ExamStatus
 
 class ExamSchedule(SoftDeleteModel):
-    fk_semester_subject = models.ForeignKey('SemesterSubject', related_name='exam_schedules', on_delete=models.CASCADE, verbose_name=_('مادة الفصل'))
-    fk_grade_distribution = models.ForeignKey('GradeDistribution', related_name='exam_schedules', on_delete=models.CASCADE, verbose_name=_('توزيع الدرجات'))
+    fk_semester_subject = models.ForeignKey('system_management.SemesterSubject', related_name='exam_schedules', on_delete=models.CASCADE, verbose_name=_('مادة الفصل'))
+    fk_grade_distribution = models.ForeignKey('system_management.GradeDistribution', related_name='exam_schedules', on_delete=models.CASCADE, verbose_name=_('توزيع الدرجات'))
     exam_type = models.PositiveSmallIntegerField(choices=ExamType.choices, verbose_name=_('نوع الامتحان'))
     title = models.CharField(max_length=200, verbose_name=_('العنوان'))
     description = models.TextField(blank=True, verbose_name=_('الوصف'))

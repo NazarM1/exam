@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from exam.models import ExamConflict
+from exam.models.ExamConflict import ExamConflict
 
 class ExamConflictSerializer(serializers.ModelSerializer):
     class Meta:

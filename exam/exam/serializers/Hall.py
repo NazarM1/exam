@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from exam.models import Hall
+from exam.models.Hall import Hall
 
 class HallSerializer(serializers.ModelSerializer):
     class Meta:

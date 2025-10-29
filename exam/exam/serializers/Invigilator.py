@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from exam.models import Invigilator
+from exam.models.Invigilator import Invigilator
 
 class InvigilatorSerializer(serializers.ModelSerializer):
     class Meta:

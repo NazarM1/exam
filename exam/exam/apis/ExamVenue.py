@@ -1,7 +1,6 @@
 from rest_framework import viewsets
-from exam.models import ExamVenue
-from exam.serializers.ExamVenue import ExamVenueSerializer
+from exam.serializers.ExamVenue import ExamVenueSerializer,ExamVenue
 
 class ExamVenueViewSet(viewsets.ModelViewSet):
-    queryset = ExamVenue.objects.allprefetch_related()
+    queryset = ExamVenue.objects.prefetch_related()
     serializer_class = ExamVenueSerializer

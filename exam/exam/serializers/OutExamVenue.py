@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from exam.models import OutExamVenue
+from exam.models.OutExamVenue import OutExamVenue
 
 class OutExamVenueSerializer(serializers.ModelSerializer):
     class Meta:

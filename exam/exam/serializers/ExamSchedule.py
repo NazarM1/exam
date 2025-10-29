@@ -2,7 +2,8 @@ from rest_framework import serializers
 from django.db import transaction
 from django.db.models import Q
 
-from exam.models import ExamSchedule, ExamVenueAssignment
+from exam.models.ExamSchedule import ExamSchedule
+from ..models.ExamVenueAssignment import ExamVenueAssignment
 from exam.serializers.ExamVenueAssignment import ExamVenueAssignmentSerializer
 
 class ExamScheduleSerializer(serializers.ModelSerializer):

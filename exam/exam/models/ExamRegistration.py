@@ -7,11 +7,11 @@ from exam.choices.choices import RegistrationStatus
 
 
 class ExamRegistration(SoftDeleteModel):
-    fk_student_subject = models.ForeignKey('StudentSubject', on_delete=models.CASCADE, related_name='exam_registrations', verbose_name=_('الطالب'))
-    fk_grades_record = models.ForeignKey('GradesRecord', on_delete=models.CASCADE, related_name='exam_registrations', verbose_name=_('سجل الدرجات'), null=True, blank=True)
+    fk_student_subject = models.ForeignKey('system_management.StudentSubject', on_delete=models.CASCADE, related_name='exam_registrations', verbose_name=_('الطالب'))
+    fk_grades_record = models.ForeignKey('system_management.GradesRecord', on_delete=models.CASCADE, related_name='exam_registrations', verbose_name=_('سجل الدرجات'), null=True, blank=True)
     fk_exam_schedule = models.ForeignKey('ExamSchedule', on_delete=models.CASCADE, related_name='registrations', verbose_name=_('جدول الامتحان'))
     fk_venue = models.ForeignKey('ExamVenue', on_delete=models.CASCADE, related_name='scheduled_registrations', verbose_name=_('مكان الامتحان'))
-    fk_exam_form = models.ForeignKey('TestForm', on_delete=models.CASCADE, related_name='scheduled_registrations', verbose_name=_('نموذج الامتحان'), null=True, blank=True)
+    fk_exam_form = models.ForeignKey('system_management.TestForm', on_delete=models.CASCADE, related_name='scheduled_registrations', verbose_name=_('نموذج الامتحان'), null=True, blank=True)
 
     registration_date = models.DateTimeField(auto_now_add=True, verbose_name=_('تاريخ التسجيل'))
     status = models.PositiveSmallIntegerField(choices=RegistrationStatus.choices, default=RegistrationStatus.REGISTERED, verbose_name=_('حالة التسجيل'))

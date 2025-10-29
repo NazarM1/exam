@@ -8,7 +8,7 @@ from exam.choices.choices import VenueType
 
 
 class OutExamVenue(SoftDeleteModel):
-    fk_branch = models.ForeignKey('Organization', on_delete=models.PROTECT, verbose_name=_('الفرع'), null=True, blank=True)
+    fk_branch = models.ForeignKey('system_management.Organization', on_delete=models.PROTECT, verbose_name=_('الفرع'), null=True, blank=True)
     name = models.CharField(max_length=100, verbose_name=_('الاسم'))
     code = models.CharField(max_length=20,verbose_name=_('الرمز'))
     venue_type = models.PositiveSmallIntegerField(choices=VenueType.choices, verbose_name=_('نوع المكان'))

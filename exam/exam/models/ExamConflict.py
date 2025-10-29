@@ -1,3 +1,9 @@
+from .base import SoftDeleteModel
+from exam.choices.choices import ConflictType, ConflictStatus
+from .ExamSchedule import ExamSchedule
+from django.db import models
+from django.utils.translation import gettext_lazy as _
+from django.db.models import Q
 
 class ExamConflict(SoftDeleteModel):
     """نموذج لتسجيل حالات التعارض التي يكتشفها النظام أو المستخدم.

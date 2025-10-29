@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from exam.models import UnavailableDate
+from exam.models.UnavailableDate import UnavailableDate
 
 class UnavailableDateSerializer(serializers.ModelSerializer):
     class Meta:

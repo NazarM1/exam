@@ -1,6 +1,5 @@
 from rest_framework import viewsets
-from exam.models import InvigilationDuty
-from exam.serializers.InvigilationDuty import InvigilationDutySerializer
+from exam.serializers.InvigilationDuty import InvigilationDutySerializer,InvigilationDuty
 
 class InvigilationDutyViewSet(viewsets.ModelViewSet):
     queryset = InvigilationDuty.objects.prefetch_related()

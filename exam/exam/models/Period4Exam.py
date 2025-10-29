@@ -6,7 +6,7 @@ from .base import SoftDeleteModel
 
 
 class Period4Exam(SoftDeleteModel):
-    fk_branch = models.ForeignKey('Organization', on_delete=models.PROTECT, verbose_name=_('الفرع'), null=True, blank=True)
+    fk_branch = models.ForeignKey('system_management.Organization', on_delete=models.PROTECT, verbose_name=_('الفرع'), null=True, blank=True)
     order_no = models.PositiveSmallIntegerField(verbose_name=_('رقم الترتيب'))
     start_time = models.TimeField(verbose_name=_('بداية الفترة'))
     end_time = models.TimeField(verbose_name=_('نهاية الفترة'))

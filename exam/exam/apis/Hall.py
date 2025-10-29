@@ -1,6 +1,5 @@
 from rest_framework import viewsets
-from exam.models import Hall
-from exam.serializers.Hall import HallSerializer
+from exam.serializers.Hall import HallSerializer,Hall
 
 class HallViewSet(viewsets.ModelViewSet):
     queryset = Hall.objects.prefetch_related()

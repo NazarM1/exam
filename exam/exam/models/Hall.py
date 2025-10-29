@@ -8,7 +8,7 @@ from exam.choices.choices import VenueType
 
 
 class Hall(SoftDeleteModel):
-    fk_building = models.ForeignKey('Building', related_name='halls', on_delete=models.CASCADE, verbose_name=_('المبنى'))
+    fk_building = models.ForeignKey('system_management.Building', related_name='halls', on_delete=models.CASCADE, verbose_name=_('المبنى'))
     floor = models.CharField(max_length=30, verbose_name=_('الطابق'), null=True, blank=True)
     name = models.CharField(max_length=100, verbose_name=_('الاسم'))
     code = models.CharField(max_length=20, verbose_name=_('الرمز'))
